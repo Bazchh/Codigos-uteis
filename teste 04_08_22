@@ -1,0 +1,40 @@
+#include <stdlib.h>
+# include <stdio.h>
+# include <time.h>
+
+float *gerador (size_t n);
+
+int main () {
+printf ("Sequencia aleatoria: \n");
+	clock_t t1;
+	t1 = clock();
+	size_t n = 1;
+ float*res = gerador (n);
+ 
+ for (size_t i = 0; i < n ; i ++) {
+ printf ("res [%i] %.2f\n", i, res[i]);
+ 
+ 		}
+ 		t1 = clock () - t1;
+ 	
+ 		printf("\nO tempo de exeução foi %f 's\n\n", (((float)t1)/CLOCKS_PER_SEC));
+ 		return 0;
+ }
+ 		
+ 
+ float *gerador (size_t n) {
+
+	srand (time(NULL));
+	float *res = (float*) malloc (n*sizeof(float));
+	for (size_t i = 0; i < n ; i ++) {
+	res [i] = rand()%1000;
+		}
+ 				return res ;
+}
+
+int Calculo_da_media_rec(int n){
+	if (n==1){
+		
+	}
+	
+}
