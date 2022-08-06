@@ -4,21 +4,21 @@
 #include <locale.h>
 
 float *gerador (size_t n);
-int Calculo_da_media_rec(int n, float *v, int soma);
+int Calculo_da_media_rec(int n, float *v, int soma, int qnt);
 
 int main () {
 	setlocale(LC_ALL,"");	
 	printf ("Sequencia aleatoria: \n");
 		clock_t t1;
 		t1 = clock();
-		size_t n = 100,i;
+		size_t n = 5,i;
  		float*res = gerador (n);
  		int media;
 		  for (i = 0; i < n ; i ++) {
  			printf ("res [%i] %.2f\n", i, res[i]);
  
  		}
-		media = Calculo_da_media_rec(n,res,0);
+		media = Calculo_da_media_rec(n,res,0, n);
 		
  		t1 = clock () - t1;
  		printf("\n\nA media dos numeros é: %i\n\n", media);
@@ -37,12 +37,12 @@ int main () {
  				return res ;
 }
 
-int Calculo_da_media_rec(int n,float *v, int soma){
+int Calculo_da_media_rec(int n,float *v, int soma, int qnt){
 	
 	if (n==1){
-		return (soma*1);
+		return soma/qnt;
 	} else{
-		return (Calculo_da_media_rec(n-1, v, soma+v[n-1]))/n+n-1;
+		return (Calculo_da_media_rec(n-1, v, soma+v[n-1],qnt));
 	}
 	
 }
