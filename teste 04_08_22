@@ -40,9 +40,9 @@ int main () {
 int Calculo_da_media_rec(int n,float *v, int soma){
 	
 	if (n==1){
-		return v[0];
+		return (soma*1);
 	} else{
-		return Calculo_da_media_rec(n-1, v, soma+v[n-1]);
+		return (Calculo_da_media_rec(n-1, v, soma+v[n-1]))/n+n-1;
 	}
 	
 }
