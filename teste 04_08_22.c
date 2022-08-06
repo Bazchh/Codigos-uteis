@@ -11,14 +11,14 @@ int main () {
 	printf ("Sequencia aleatoria: \n");
 		clock_t t1;
 		t1 = clock();
-		size_t n = 5,i;
+		size_t n = 5,i, qnt = n;
  		float*res = gerador (n);
  		int media;
 		  for (i = 0; i < n ; i ++) {
  			printf ("res [%i] %.2f\n", i, res[i]);
  
  		}
-		media = Calculo_da_media_rec(n,res,0, n);
+		media = Calculo_da_media_rec(n,res,0, qnt);
 		
  		t1 = clock () - t1;
  		printf("\n\nA media dos numeros é: %i\n\n", media);
@@ -39,7 +39,7 @@ int main () {
 
 int Calculo_da_media_rec(int n,float *v, int soma, int qnt){
 	
-	if (n==1){
+	if (n==0){
 		return soma/qnt;
 	} else{
 		return (Calculo_da_media_rec(n-1, v, soma+v[n-1],qnt));
