@@ -2,32 +2,38 @@
 #include <stdlib.h>
 #include <locale.h>
 
-int contfib(int n1, int n2, int aux, int n);
+int fib(int n, int k);
 
 int main(){
-	int n1, n2, aux, n, r;
+	int n, k, r;
 	
 	printf("\n Insira um numero para calcular seu fibonacci: ");
 	scanf("%i", &n);
 	
-	contfib(n1, n2, aux, n, k);
+	printf("\nInsira numero para ser avaliado durante o fibonacci de %i: ", n);
+	scanf("%i", &k);
+	
+	r = fib(n, k);
+	
+	printf("\n%i\n", r);
 	
 	return 0;
 }
 
-
-int contfib(int n1, int n2, int aux, int n, int k){
-	n1 = 0;
-	n2 = 1;
-	int i;
+int fib(int n, int k){
+	int n1 = 0;
+	int n2 = 1;
+	int i, aux, cont = 0;
 	
 	for (i = 0; i  < n; i++){
 		aux = n1+n2;
 		n1 = n2;
 		n2 = aux;
 		
-		printf(" %i ", n2);
+		if (n2 > k){
+			fib (k, n);
+			cont++;
+		}
 	}
-	
-	return n2;
+	return cont;
 }
