@@ -34,9 +34,7 @@ int fib(int n, int k){
 		if (n2 > k){
 			fib (k, n);
 			cont++;
-		} else {
-			return cont+1;
-		}
+		} 
 		
 	}
 	
