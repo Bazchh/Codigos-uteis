@@ -16,7 +16,7 @@ int main(){
 	r = fib(n, k);
 	
 	printf("\nO fibonacci de %i foi avaliado %i vezes durante a busca do fibonacci"
-	"de %i \n", k, r, n);
+	" de %i \n", k, r, n);
 	
 	return 0;
 }
@@ -34,6 +34,8 @@ int fib(int n, int k){
 		if (n2 > k){
 			fib (k, n);
 			cont++;
+		} else {
+			return cont+1;
 		}
 		
 	}
