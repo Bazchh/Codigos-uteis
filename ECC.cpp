@@ -21,6 +21,7 @@ Equação da curva eliptica:
 y^2 = x^3+Ax+B
 
 Condição de contorno para realizar a criptografia:
+Desta forma necessitamos de uma curva eliptica não singular, ou seja, que satifaz a condição abaixo
 4A^3+27B^2≠0
 
 CASO P DIFERENTE DE Q {
@@ -56,19 +57,31 @@ b = y1 - mx1
 }
 */
 
-float coefiecienteM(pontos P, pontos Q){
+float coefiecienteM1(pontos P, pontos Q){
 float m;
 
-    if(P.x != Q.x && P.y != Q.y){
     m = (Q.y - P.y)/Q.x - P.x;
-    } 
+    
     return m;
+}
+
+float coefiecienteM2(pontos P, pontos Q, float A){
+float m;
+
+    m = (3*(pow(P.x,2))+A)/2*P.y;
+    
+    return m;
+}
+
+void imprimePonto(pontos P){
+    printf("\nPonto x = %f", P.x);
+    printf("\nPonto y = %f", P.y);
 }
 
 int main(){
     
-pontos P, Q;
-float x3, y3, m, n, A;
+pontos P, Q, R;
+float m, n, A;
 
 //Implementação do caso P diferente de Q
 
@@ -81,25 +94,27 @@ scanf("%f %f", &Q.x, &Q.y);
 A = rand()%1000;
 
 if(P.x != Q.x && P.y != Q.y){
-
         
-m = (Q.y - P.y)/Q.x - P.x;    
+m = coefiecienteM1(P,Q);   
 n = P.y - m*P.x;    
-x3 = (pow(m,2))- P.x - Q.x; //Descobrindo o terceiro ponto em x3
-y3 = m*x3 + n; //Descobrindo o terceiro ponto em y3
-
+R.x = (pow(m,2))- P.x - Q.x; //Descobrindo o terceiro ponto em x3
+R.y = m*R.x + n; //Descobrindo o terceiro ponto em y3
+R.y = -1*R.y;//Conjugado
     } 
-
 else if (P.x == Q.x && P.y == Q.y ){
 
-m = (3*(pow(P.x,2))+A)/2*P.y; //Equação já na forma derivada da equação da curva eliptica
+m = coefiecienteM2(P, Q, A); //Equação já na forma derivada da equação da curva eliptica
 n = P.y - m*P.x;
 
-x3 = (pow(m,2))- P.x - Q.x; //Descobrindo o terceiro ponto em x3
-y3 = m*x3 + n; //Descobrindo o terceiro ponto em y3
-
+R.x = (pow(m,2))- P.x - Q.x; //Descobrindo o terceiro ponto em x3
+R.y = m*R.x + n; //Descobrindo o terceiro ponto em y3
+R.y = -1*R.y; //Conjugado
     }   
     
+imprimePonto(R);
+
+printf("\n\n");
+
 }
 
 
