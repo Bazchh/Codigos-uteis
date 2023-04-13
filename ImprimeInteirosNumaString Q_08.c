@@ -12,7 +12,7 @@ Matricula: 2021010988
 
 entrada-> 1st0 3 um4 57r1ng
 
-saÌda-> inteiro presente na string: 1034571
+sa√≠da-> inteiro presente na string: 1034571
 
 */
 
@@ -22,7 +22,7 @@ int main (){
 	
 	setlocale(LC_ALL,"");
 	
-	char *str; //Ponteiro que ser· alocado para armazenar a string inserida pelo usuario
+	char *str; //Ponteiro que ser√° alocado para armazenar a string inserida pelo usuario
 	int i = 0, j = 0;//Variavel contadora
 	str = (char*)malloc(50*sizeof(char));//Alocando o ponteiro de vetor
 	
@@ -30,24 +30,24 @@ int main (){
 	printf("\nInsira uma string: ");
 	fgets(str,50,stdin);
 	
-	//Utilizei o laÁo while neste codigo por ser melhor para desempenho neste exercicio, assim como no exercicio 7, pois, se o usuario inserir uma string menor que o 
-	//tamanho alocado, ele n„o percorrer· os 50*tamanho_char endereÁos, que È o tamanho alocado neste exemplo
+	//Utilizei o la√ßo while neste codigo por ser melhor para desempenho neste exercicio, assim como no exercicio 7, pois, se o usuario inserir uma string menor que o 
+	//tamanho alocado, ele n√£o percorrer√° os 50*tamanho_char endere√ßos, que √© o tamanho alocado neste exemplo
 	while(str[i]!='\0'){
 		
-		str[i]=retorna(&str[i]); //Atribuindo as posiÁıes do vetor somente os inteiros
+		str[i]=retorna(&str[i]); //Atribuindo as posi√ß√µes do vetor somente os inteiros
 		i++;
 								   	
 	}
 	
-	char *str1; //Declarando um vetor de char que organizar· corretamente os valores inteiros
+	char *str1; //Declarando um vetor de char que organizar√° corretamente os valores inteiros
 	
-	str1 = (char*)malloc(50*sizeof(char));//Alocando o ponteiro de vetor que armazenar· somente os inteiros de forma organizada
+	str1 = (char*)malloc(50*sizeof(char));//Alocando o ponteiro de vetor que armazenar√° somente os inteiros de forma organizada
 	
-	//LaÁo para armazenar somente os inteiros na variavel 'str1'
+	//La√ßo para armazenar somente os inteiros na variavel 'str1'
 	for(i=0; i<strlen(str) || str[i]=='\0';i++){
 		
-		//Esta condiÁ„o pega somente os valores inteiros da string e os armazena dentro da outra string de forma que fiquem juntos
-		//em posiÁıes consecutivas do vetor
+		//Esta condi√ß√£o pega somente os valores inteiros da string e os armazena dentro da outra string de forma que fiquem juntos
+		//em posi√ß√µes consecutivas do vetor
 		if(str[i]!=32){
 			
 			str1[j] = str[i];
@@ -57,7 +57,7 @@ int main (){
 		
 	}
 	
-	//Imprime SOMENTE os inteiros presentes na strin, porÈm, como tive pouco tempo 	
+	//Imprime SOMENTE os inteiros presentes na strin, por√©m, como tive pouco tempo 	
 	printf("\nInteiro presente na string: %s", str1);
 	
 	//Libera a memoria
