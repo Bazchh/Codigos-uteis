@@ -12,12 +12,12 @@ Matricula: 2021010988
 
 Entrada-> 3 pontos: (3,1),(9,1),(5,6)
 
-SaÌda-> Os pontos mais distantes entre sÌ s„o (3,1) e (5,6)
+Sa√≠da-> Os pontos mais distantes entre s√≠ s√£o (3,1) e (5,6)
 
 */
 
-//N„o consegui fazer com que o codigo RETORNE de forma correta os pontos, mas 
-//Imprimi-los foi bastante facil com o metodo que utilizei na funÁ„o
+//N√£o consegui fazer com que o codigo RETORNE de forma correta os pontos, mas 
+//Imprimi-los foi bastante facil com o metodo que utilizei na fun√ß√£o
 //'maisDistante'. O programa acaba me retornando um valor aleatorio algumas vezes
 //no primeiro ponto
 
@@ -33,8 +33,8 @@ typedef struct pontos {
  {
 	 setlocale(LC_ALL, "");
 	 
-	 Pontos *Vet; //Ponteiro do tipo 'Pontos' que armazenar· os pontos 
-	 //x e y inseridos pelo usu·rio e que ser· alocado dinamicamente
+	 Pontos *Vet; //Ponteiro do tipo 'Pontos' que armazenar√° os pontos 
+	 //x e y inseridos pelo usu√°rio e que ser√° alocado dinamicamente
 	 
 	 int Pts = 0; //Variavel do tipo inteiro que define a quantidade 
 	 //de pontos desejados pelo usuario 
@@ -59,29 +59,29 @@ typedef struct pontos {
 	
 	float *doisdistantes = maisDistante(Vet,Pts);
 	
-	printf("\nOs pontos mais distantes entre si s„o (%.1f, %.1f) e (%.1f, %.1f)\n", Vet[(int)doisdistantes[0]].x, Vet[(int)doisdistantes[0]].y
+	printf("\nOs pontos mais distantes entre si s√£o (%.1f, %.1f) e (%.1f, %.1f)\n", Vet[(int)doisdistantes[0]].x, Vet[(int)doisdistantes[0]].y
 	 ,Vet[(int)doisdistantes[1]].x, Vet[(int)doisdistantes[1]].y);
 	 
 	
 	 
 	 printf("\n\n");
-	free(Vet);//Libera o espaÁo alocado pelo vetor
+	free(Vet);//Libera o espa√ßo alocado pelo vetor
 	 system("pause");
 	 return 0;
  }
- //FunÁ„o que retorna os dois pontos mais distantes entre si
+ //Fun√ß√£o que retorna os dois pontos mais distantes entre si
  float *maisDistante(Pontos *Vet, int tamanho){
 
  int i = 0;
  
 static float doisdistantes[2] = {0,0};
 //atribuindo valores iniciais de x e y ao vetor
-//que armazenar· os menores e maiores valores de x e y
+//que armazenar√° os menores e maiores valores de x e y
 doisdistantes [0]=Vet[0].x;
 doisdistantes [1]=Vet[0].y;	
 
-	//LaÁo que verifica quais os maiores e menores valores de x e y em suas 
-	//respectivas posiÁıes de acordo com o indice 'i' e compara o valores dos
+	//La√ßo que verifica quais os maiores e menores valores de x e y em suas 
+	//respectivas posi√ß√µes de acordo com o indice 'i' e compara o valores dos
 	//pontos
 	for (i = 0; i < tamanho; i++){
 		
