@@ -4,6 +4,9 @@
 #include <stdlib.h>
 #define SIZE 1024 //Tamanho para de posições da tabela hash
 
+/* Neste codigo estou usando o conceito de tabela Hash aprendido em estrututras de dados II, onde usando um calculo do Hash inserimos em uma tabela 
+algumas cidade com base em sua key*/
+
 typedef dataItem *hash[SIZE]; //Definindo "apelido" para a struct que armazena a key, a cidade e as coordenas com struct "gps"
 
 void init(hash &H) {   //Função que inicia uma tabela hash e esvazia as posições da tabela
