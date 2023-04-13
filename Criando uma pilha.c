@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <locale.h>
 
+/*Implementa√ß√£o de algumas fun√ß√µes mas sua principal fun√ß√£o neste ponto do codigo era criar uma pilha*/
+
 typedef struct estudante{
 	
 	char nome[100];
@@ -19,7 +21,7 @@ typedef struct {
 }Pilha;
 
 void menu(){
-	printf("\n========Escolha uma opÁ„o=========");
+	printf("\n========Escolha uma op√ß√£o=========");
 	printf("\n1 - Adicionar pilha");
 	printf("\n2 - Mostrar pilha");
 	printf("\n3 - Remover elemento");
@@ -39,7 +41,7 @@ void inserir(Pilha *p, Estudante dado){
 	novo->dado = dado; //Recebe os dados passados
 	novo->prox = p->topo; //Fazemos os novos dados apontarem para onde o topo apontava
 	p->topo = novo; //Agora fazemos o topo da pilha apontar para os novos dados
-	//exe: topo->novo->antigo_topo apÛs o uso da funÁ„o
+	//exe: topo->novo->antigo_topo ap√≥s o uso da fun√ß√£o
 }
 
 void imprime(Pilha p){
@@ -52,7 +54,7 @@ void imprime(Pilha p){
 
 void remover(Pilha *p){
 	if(p->topo==NULL){
-		printf("\nA pilha est· vazia\n");
+		printf("\nA pilha est√° vazia\n");
 	}else if(p->topo!=NULL)
 	{
     struct no*pi = p->topo;	
@@ -76,7 +78,7 @@ struct no*topo(Pilha p){
 }
 
 void inverter(Pilha *p){
-	struct no *pi = p->topo; //Criamos um nÛ para nos auxiliar
+	struct no *pi = p->topo; //Criamos um n√≥ para nos auxiliar
 	Pilha aux; //Pilha auxiliar
 	aux.topo = NULL;
 	for(pi = p->topo; pi != NULL; pi = p->topo){
@@ -84,7 +86,7 @@ void inverter(Pilha *p){
 		//Na pilha auxiliar
 		remover(p); //Removemos o elemento do topo da pilha original a cada rodada
 	}
-	p->topo = aux.topo; //Ao fim da funÁ„o, copiamos a pilha auxiliar a qual È a pilha invertida de volta para a pilha original
+	p->topo = aux.topo; //Ao fim da fun√ß√£o, copiamos a pilha auxiliar a qual √© a pilha invertida de volta para a pilha original
 }
 
 int main()
@@ -110,10 +112,10 @@ int main()
 		if(op==4){
 			int r = vazia(p);
 			if(r != 0){
-				printf("\nA pilha est· vazia\n");
+				printf("\nA pilha est√° vazia\n");
 			}else
 			{
-				printf("\n pilha contÈm elementos\n");
+				printf("\n pilha cont√©m elementos\n");
 			}
 		}
 		if(op==5){
