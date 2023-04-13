@@ -6,14 +6,16 @@
 Marcos Mikael Lima Vidal
 Matricula: 2021010988
 */                                      
-/*Ex de entrada e saída
+/*Ex de entrada e saÃ­da
 
-Entrada-> tamanho da matriz: 4 (a matriz terá 16 elementos, pois, como é uma matriz quadrada ficará linhaxcoluna (4x4))
+Entrada-> tamanho da matriz: 4 (a matriz terÃ¡ 16 elementos, pois, como Ã© uma matriz quadrada ficarÃ¡ linhaxcoluna (4x4))
 
-saída->  1  5  9   13
-		 2	6  10  14
+saÃ­da->  	 1  5  9   13
+		 2  6  10  14
 		 3  7  11  15
-		 4	8  12  16
+		 4  8  12  16
+		 
+		 Insere elementos na matri de forma crescente
 */                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 int main()
 {
@@ -28,7 +30,7 @@ int main()
 	int **mat = (int**) malloc(T*sizeof(int*));
 	
 	
-	//Atribui elementos a cada posição da matriz de forma crescente por linha 
+	//Atribui elementos a cada posiÃ§Ã£o da matriz de forma crescente por linha 
 	for (i=0; i < T; i++){
 		mat[i] =  (int*) malloc(T*sizeof(int));
 	}
