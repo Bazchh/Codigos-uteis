@@ -13,9 +13,14 @@ entrada-> 12 5 1990 - 16 8 2025
 
 saida-> dias decorridos: 12865 dias
 
+O programa informa quantos dias foram decorridos com base em uma data inserida
+
 */
 
-//Struct que contém os dias, meses e ano utilizados na implementação do programa
+
+
+
+//Struct que contÃ©m os dias, meses e ano utilizados na implementaÃ§Ã£o do programa
 typedef struct data{
 	
 	int dia;
@@ -24,37 +29,37 @@ typedef struct data{
 	
 }Data;
 
-//Escopo da função utilizada
+//Escopo da funÃ§Ã£o utilizada
 int Diasdecorridos (Data *d1, Data *d2);
 
 int main (){
 	setlocale(LC_ALL,"");
-	Data d1, d2; //Declaração do tipo criado para implementação das datas
-	int R; //Armazena o valor retornado pela função
+	Data d1, d2; //DeclaraÃ§Ã£o do tipo criado para implementaÃ§Ã£o das datas
+	int R; //Armazena o valor retornado pela funÃ§Ã£o
 	
-	//Recebendo uma data válida
-	printf("\nInsira uma data (dia/mês/ano): ");
+	//Recebendo uma data vÃ¡lida
+	printf("\nInsira uma data (dia/mÃªs/ano): ");
 	scanf("%i%i%i", &d1.dia,&d1.mes,&d1.ano);
 	
-	//Verifica se o usuario inseriu uma data válida para dia e mês, não podendo ultrapassar 30 e nem 12, respectivamente
+	//Verifica se o usuario inseriu uma data vÃ¡lida para dia e mÃªs, nÃ£o podendo ultrapassar 30 e nem 12, respectivamente
 	if(d1.dia > 30 || d1.mes > 12){
 		
-		printf("\nErro. Quantidade de dias ou meses inválida!");
+		printf("\nErro. Quantidade de dias ou meses invÃ¡lida!");
 		exit(1);
 		
 	}
 	
-	printf("\nInsira uma segunda data (dia/mês/ano): ");
+	printf("\nInsira uma segunda data (dia/mÃªs/ano): ");
 	scanf("%i%i%i", &d2.dia,&d2.mes,&d2.ano);
-	//Verifica se o usuario inseriu uma data válida para dia e mês, não podendo ultrapassar 30 e nem 12, respectivamente
+	//Verifica se o usuario inseriu uma data vÃ¡lida para dia e mÃªs, nÃ£o podendo ultrapassar 30 e nem 12, respectivamente
 	if(d2.dia > 30 || d2.mes > 12){
 		
-		printf("\nErro. Quantidade de dias ou meses inválida!");
+		printf("\nErro. Quantidade de dias ou meses invÃ¡lida!");
 		exit(1);
 		
 	}
 	
-	//Armazena o valor retornado da função que calcula quantos dias se passou durante as datas
+	//Armazena o valor retornado da funÃ§Ã£o que calcula quantos dias se passou durante as datas
 	R = Diasdecorridos(&d1,&d2);
 	
 	//Para evitar que o resultado dos dias decorridos seja negativo ou para quando o usuario inserir as datas de forma invertido,
@@ -71,7 +76,7 @@ int main (){
 	return 0;
 }
 
-//Função que retorna a quantidade de dias decorridos entre as duas datas, com dois ponteiros passados por referencia do tipo da struct 'Data'
+//FunÃ§Ã£o que retorna a quantidade de dias decorridos entre as duas datas, com dois ponteiros passados por referencia do tipo da struct 'Data'
 int Diasdecorridos (Data *d1, Data *d2){
 	
 	//variaveis que armazenaram resultados dos calculos para se chegar na quantidade de dias decorridos
@@ -81,7 +86,7 @@ int Diasdecorridos (Data *d1, Data *d2){
 	mes = d1->mes*30; //Transforma meses em dias
 	Dias1 = ano+mes+d1->dia; //A soma dos dias transformados dos meses e anos + dias das datas inseridas
 	
-	//Redefinição do valor das variaveis usadas para transformas anos e meses em dias para atribuição da quantidade de dias da segunda data
+	//RedefiniÃ§Ã£o do valor das variaveis usadas para transformas anos e meses em dias para atribuiÃ§Ã£o da quantidade de dias da segunda data
 	ano = 0;
 	mes = 0;
 	
@@ -90,7 +95,7 @@ int Diasdecorridos (Data *d1, Data *d2){
 	mes = d2->mes*30;
 	Dias2 = ano+mes+d1->dia;
 	
-	//Realizando subtração dos dias totais das duas data e armazenando em uma variavel que retornará o resultado
+	//Realizando subtraÃ§Ã£o dos dias totais das duas data e armazenando em uma variavel que retornarÃ¡ o resultado
 	R = Dias1 - Dias2;
 	
 	return R;
