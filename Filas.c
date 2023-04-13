@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <locale.h>
 
+/*Neste codigo estava a trabalhar com filas, inser√ß
+
 typedef struct 
 {
 	char nome[100];
@@ -22,7 +24,7 @@ typedef struct Fila{
 }fila;
 
 void menu(){
-	printf("\n========Escolha uma opÁ„o=========");
+	printf("\n========Escolha uma op√ß√£o=========");
 	printf("\n1 - inserir");
 	printf("\n2 - Imprimir fila");
 	printf("\n3 - Remover elemento");
@@ -36,15 +38,15 @@ void ler(estudante *e){
 
 void inserir(fila *f, estudante dado){
 	struct no* novo = (struct no*)malloc(sizeof(struct no));
-	novo->dado = dado; //insere os novos dados · um nÛ
-	novo->prox = NULL;//o proximo nÛ ao novo dado inserido È null
+	novo->dado = dado; //insere os novos dados √° um n√≥
+	novo->prox = NULL;//o proximo n√≥ ao novo dado inserido √© null
 	if(f->inicio == NULL){
 		f->inicio = novo;
 		f->fim = novo;
 	}else
 	{
-		f->fim->prox = novo; //Fazemos o fim anterior apontar para o novo nÛ inserido
-		f->fim = novo; //Fazemos o nosso fim ser o novo nÛ inserido
+		f->fim->prox = novo; //Fazemos o fim anterior apontar para o novo n√≥ inserido
+		f->fim = novo; //Fazemos o nosso fim ser o novo n√≥ inserido
 	}
 }
 
