@@ -7,14 +7,16 @@ Marcos Mikael Lima Vidal
 Matricula: 2021010988
 */
 
-/*Exemplo de entrada e saÌda
+/*Programa para verificar o tamanho de uma struct em bytes*/
 
-A entrada do programa È a quantidade de variaveis de cada tipo
+/*Exemplo de entrada e sa√≠da
 
-a saÌda È a multiplicaÁ„o do tamanho dessas variaveis, mas caso exista mais de uma variavel do mesmo tipo, apÛs a multiplicaÁ„o
-da primeira variavel daquele tipo pelas outras variaveis de tipos diferentes, ser· executado apenas uma soma com o valor da varaivel a ser somada
+A entrada do programa √© a quantidade de variaveis de cada tipo
 
-ex: a struct contÈm int, char e float. Ser· impresso 48 bytes, mas caso seja inserido mais uma variavel do tipo int, ser· somado +4
+a sa√≠da √© a multiplica√ß√£o do tamanho dessas variaveis, mas caso exista mais de uma variavel do mesmo tipo, ap√≥s a multiplica√ß√£o
+da primeira variavel daquele tipo pelas outras variaveis de tipos diferentes, ser√° executado apenas uma soma com o valor da varaivel a ser somada
+
+ex: a struct cont√©m int, char e float. Ser√° impresso 48 bytes, mas caso seja inserido mais uma variavel do tipo int, ser√° somado +4
 
 */
 
@@ -31,9 +33,9 @@ typedef struct data{
 
 int main (){
 	setlocale(LC_ALL,"");
-	Data Aluno; //Variavel do tipo da struct que contÈm os dados dos aluno
+	Data Aluno; //Variavel do tipo da struct que cont√©m os dados dos aluno
 	
-	//AtribuiÁ„o de dados para cada variavel da struct
+	//Atribui√ß√£o de dados para cada variavel da struct
 	Aluno.matricula = 2021010988;
 	Aluno.nome [30] = "Marcos Mikael Lima Vidal";
 	Aluno.Provas[0] = 7,5;
