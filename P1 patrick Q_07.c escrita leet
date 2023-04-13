@@ -8,15 +8,17 @@ Marcos Mikael Lima Vidal
 Matricula: 2021010988
 */
 
-/*Exemplo de entrada e saÌda
+/*Exemplo de entrada e sa√≠da
 
-Entrada-> "Isto È uma string"
+Entrada-> "Isto √© uma string"
 
-SaÌda->   "157o 3 um4 57r1ng"
+Sa√≠da->   "157o 3 um4 57r1ng"
 
 */
 
-//Escopo de funÁ„o
+/*Nesse programa utilizamos a escrita leet para alterar os caracteres de uma string que foi inserida pelo usuario*/
+
+//Escopo de fun√ß√£o
 char leetspeak(char *l);
 
 
@@ -24,7 +26,7 @@ int main (){
 	
 	int i = 0; //Variavel contadora
 	setlocale(LC_ALL,"");
-	char *str; //Ponteiro que ser· alocado para armazenar a string inserida pelo usuario
+	char *str; //Ponteiro que ser√° alocado para armazenar a string inserida pelo usuario
 	
 	str = (char*)malloc(50*sizeof(char));//Alocando ponteiro
 	
@@ -32,11 +34,11 @@ int main (){
 	printf("\nInsira uma string: ");
 	fgets(str,50,stdin);
 	
-	//Utilizei o laÁo while neste codigo por ser melhor para desempenho neste exercicio, pois, se o usuario inserir uma string menor que o 
-	//tamanho alocado, ele n„o percorrer· os 50*tamanho_char endereÁos, que È o tamanho alocado neste exemplo
+	//Utilizei o la√ßo while neste codigo por ser melhor para desempenho neste exercicio, pois, se o usuario inserir uma string menor que o 
+	//tamanho alocado, ele n√£o percorrer√° os 50*tamanho_char endere√ßos, que √© o tamanho alocado neste exemplo
 	while(str[i]!='\0'){
 		
-		str[i]=leetspeak(&str[i]); //Atribuindo a sua respectiva posiÁ„o da string os caracteres que devem ser alterados de acordo com a 
+		str[i]=leetspeak(&str[i]); //Atribuindo a sua respectiva posi√ß√£o da string os caracteres que devem ser alterados de acordo com a 
 								   //escrita leet
 		i++;
 	}
@@ -50,15 +52,15 @@ int main (){
 }
 
 
-//FunÁ„o que altera os caracteres de acordo a escrita leet
+//Fun√ß√£o que altera os caracteres de acordo a escrita leet
 char leetspeak(char *l){
 	
 	char troca, frase; //Variavel 'troca' armazena os caracteres da escrita leet que correspondem aos caracteres a serem alterados
 	frase = *l;	//Variavel frase serve como uma variavel temporaria que armazena a string passada por parametro em '*l', para 
-				//usar a funÁ„o switch case
+				//usar a fun√ß√£o switch case
 				
-	//FunÁ„o switch case que altera os caracteres da string original para os caracteres correspondem para os caracteres da escrita leet
-	//Enquanto o laÁo while da funÁ„o main durar			
+	//Fun√ß√£o switch case que altera os caracteres da string original para os caracteres correspondem para os caracteres da escrita leet
+	//Enquanto o la√ßo while da fun√ß√£o main durar			
 	switch(frase){
 		
 		case 'a':
