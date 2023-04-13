@@ -3,6 +3,9 @@
 #include <math.h>
 #include <time.h>
 
+/*Tentativas de se implementar a matematica da curva eliptica em um algoritmo em C++ */
+/* OBS: ainda incompleto */
+
 struct pontos{
   
   float x;
