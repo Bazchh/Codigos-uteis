@@ -7,21 +7,24 @@ Marcos Mikael Lima Vidal
 Matricula: 2021010988
 */
 
-/*Por ser uma quest„o que possui um enunciado bem especifico em quest„o do que se quer, preferi n„o inserir um
-exemplo de entrada e saÌda, mas caso o professor deseje posso enviar via email
+/*Quest√£o 1: pedia para que fosse alocado dinamicamente uma matriz de atamanho n*n e que fossem atribuidos valores para todas as posi√ß√µes, em seguida,
+pedia-se para que fossem mostrados somente valores da diagonal principal*/
+
+/*Por ser uma quest√£o que possui um enunciado bem especifico em quest√£o do que se quer, preferi n√£o inserir um
+exemplo de entrada e sa√≠da, mas caso o professor deseje posso enviar via email
 */
 int main (){
 	setlocale(LC_ALL,"");
 	
-	int **mat = (int**)malloc(10*sizeof(int*)); //Ponteiro de um ponteiro de inteiros que È alocado dinamicamente para armazenar os valores de uma matriz
+	int **mat = (int**)malloc(10*sizeof(int*)); //Ponteiro de um ponteiro de inteiros que √© alocado dinamicamente para armazenar os valores de uma matriz
 	int i, j, v = 0; //variaveis contadoras
 	
-	//Alocando posiÁıes da matriz. Caso este procedimento n„o seja feito, o programa apresenta erro durante a compilaÁ„o
+	//Alocando posi√ß√µes da matriz. Caso este procedimento n√£o seja feito, o programa apresenta erro durante a compila√ß√£o
 	for (i=0; i < 10; i++){
 		mat[i] =  (int*) malloc(10*sizeof(int));
 	}
 	
-	//Atribuindo valores para cada posiÁ„o na matriz de 1 a 10
+	//Atribuindo valores para cada posi√ß√£o na matriz de 1 a 10
 	for (j=0; j < 10; j++){
 		for (i=0; i < 10; i++){	 
 			mat[i][j] = v++;
@@ -37,12 +40,12 @@ int main (){
 	
 		printf("\n");
 	}
-	//Imprimindo somente os endereÁos da diagonal secundaria da matriz ()
-	printf("\nEndereÁo dos elementos da diagonal secundaria: \n\n");
+	//Imprimindo somente os endere√ßos da diagonal secundaria da matriz ()
+	printf("\nEndere√ßo dos elementos da diagonal secundaria: \n\n");
 	for (i=0; i < 10; i++){
 		for (j=0; j < 10; j++){
 	//Quando a soma de i+j forem iguais a 9 (no caso de uma matriz 10x10. Em outros casos menos especificos utiliza-se n-1),
-	// ser· o numero de um dos elementos da diagonal secundaria				
+	// ser√° o numero de um dos elementos da diagonal secundaria				
 				if (i+j==9){	
 			printf("%i ", &mat[i][j]);}
 	}
