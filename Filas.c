@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <locale.h>
 
-/*Neste codigo estava a trabalhar com filas, inserç
+/*Neste codigo estava a trabalhar com filas, inserção*/
 
 typedef struct 
 {
