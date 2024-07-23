@@ -3,26 +3,28 @@ class Estudante:
         self.nome = nome
         self.mat = mat
 
+
 class No:
     def __init__(self, dado=None):
         self.dado = dado
         self.prox = None
 
+
 class Pilha:
     def __init__(self):
         self.topo = None
-    
+
     def inserir(self, dado):
         novo = No(dado)
         novo.prox = self.topo
         self.topo = novo
-    
+
     def imprimir(self):
         pi = self.topo
         while pi:
             print(f"Nome: {pi.dado.nome}\nMatricula: {pi.dado.mat}\n")
             pi = pi.prox
-    
+
     def remover(self):
         if not self.topo:
             print("A pilha está vazia")
@@ -31,19 +33,16 @@ class Pilha:
             self.topo = pi.prox
             del pi
             print("Elemento removido com sucesso!")
-    
+
     def vazia(self):
-        if not self.topo:
-            return True
-        else:
-            return False
-    
+        return not self.topo
+
     def pegar_topo(self):
         if not self.topo:
             print("Pilha vazia")
         else:
             print(f"{self.topo.dado.nome} {self.topo.dado.mat}")
-    
+
     def inverter(self):
         aux = Pilha()
         while self.topo:
